@@ -6,9 +6,11 @@
         {
             System.Console.WriteLine("Olá Mundo!");
 
-          //  System.Console.WriteLine("{0}", Fibonacci(4));
+            //  System.Console.WriteLine("{0}", Fibonacci(4));
 
-            Fibonacci2(11);
+            //  Fibonacci2(11);
+
+            Ordernacao();
 
             System.Console.ReadKey();
 
@@ -36,6 +38,35 @@
                 F1 = aux;
                 i++;
             }
+        }
+
+        public static void Ordernacao()
+        {
+            int[] vet =  {100,87,50,5,1};
+
+            int[] vet2 = vet;
+
+            int aux2;
+
+            for (int i = 0; i < vet.Length; i++)
+            {
+                for (int j = 0; j < vet2.Length-1; j++)
+                {
+                    if(vet2[j] > vet2[j+1])
+                    {
+                        aux2 = vet2[j + 1];
+                        vet2[j + 1] = vet2[j];
+                        vet2[j] = aux2;
+                    }
+                }
+
+            }
+
+            for (int i = 0; i < vet2.Length; i++)
+            {
+                System.Console.WriteLine("{0}", vet2[i]);
+            }
+            
         }
     }
 }
